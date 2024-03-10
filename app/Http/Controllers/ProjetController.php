@@ -114,7 +114,7 @@ class ProjetController extends Controller
      {
         $projet = Projet::find($id);
 
-        if(!$Projet)
+        if(!$projet)
         {
             return response([
                 'message' => 'Projet non trouvé'

@@ -60,7 +60,7 @@ class AuthController extends Controller
     {
         auth()->user()->tokens()->delete();
         return response([
-            'message' => 'Logout success.',
+            'message' => 'Logout succes.',
         ], 200);
     }
 

@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'utilisateur' => [
+            'driver' => 'session', // ou tout autre pilote d'authentification que vous utilisez
+            'provider' => 'utilisateurs', // le fournisseur de données utilisateurs correspondant
+        ],
     ],
 
     /*
@@ -63,6 +68,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        'utilisateurs' => [
+            'driver' => 'eloquent', // ou tout autre pilote de fournisseur de données que vous utilisez
+            'model' => App\Models\Utilisateur::class, // Modèle utilisateur correspondant
         ],
 
         // 'users' => [

@@ -78,6 +78,14 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::put('/projet/{id}', [ProjetController::class, 'update']); // update project
     Route::delete('/projet/{id}', [ProjetController::class, 'destroy']); // delete project
 
+    // Projets de l'utilisateur
+    Route::get('/taches', [TacheController::class, 'index']); // all tasks
+    Route::post('/taches', [TacheController::class, 'store']); // create task
+    Route::get('/tache/{id}', [TacheController::class, 'show']); // get single task
+    Route::put('/tache/{id}', [TacheController::class, 'update']); // update task
+    Route::delete('/tache/{id}', [TacheController::class, 'destroy']); // delete task
+
+
     // Route pour la gestion des statuts
     Route::put('/tasks/{id}/change-status', [TaskController::class, 'changeStatus']);
 

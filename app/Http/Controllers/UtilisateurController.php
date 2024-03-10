@@ -50,7 +50,7 @@ class UtilisateurController extends Controller
         ]);
 
         // Essayer de le connecter
-        if (!Auth::attempt($attrs)) {
+        if (!auth()->guard('utilisateur')->attempt($attrs)) {
             return response([
                 'message' => 'Invalid credentials.',
             ], 403);
@@ -58,10 +58,11 @@ class UtilisateurController extends Controller
 
         // Succès : Retourner l'utilisateur & son token dans la réponse
         return response([
-            'user' => auth()->user(),
-            'token' => auth()->user()->createToken('secret')->plainTextToken,
+            'user' => auth()->guard('utilisateur')->user(),
+            'token' => auth()->guard('utilisateur')->user()->createToken('secret')->plainTextToken,
         ], 200);
     }
+
 
     // Déconnexion de l'utilisateur
     public function deconnexion()

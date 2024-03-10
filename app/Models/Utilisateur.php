@@ -24,6 +24,8 @@ class Utilisateur extends Authenticatable
 
     protected $table = 'utilisateurs';
 
+    protected $guard = 'utilisateur';
+
     public function roles()
     {
         return $this->belongsToMany(Role::class);
